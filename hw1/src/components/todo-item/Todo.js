@@ -15,7 +15,8 @@ class Todo extends Component {
         todoItem.isCompleted = !todoItem.isCompleted;
         this.setState({isCompleted: todoItem.isCompleted});
 
-        const [todo] = this.props.todoList.filter(todo => !todo.isCompleted);
+        const todo = this.props.todoList.find(todo => !todo.isCompleted);
+        console.log(todo)
         this.props.getUncompletedTodo(todo);
     }
 
