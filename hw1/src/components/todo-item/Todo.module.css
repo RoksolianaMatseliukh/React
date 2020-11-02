@@ -1,0 +1,16 @@
+
+.priorityTodo {
+    background-color: orange;
+    padding: 5px;
+    width: fit-content;
+    margin: 20px 0 5px 0;
+}
+
+.todo {
+    margin: 20px 0 5px 0;
+}
+
+.btnMargin {
+    margin-left: 5px;
+}
+
