@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 
 import s from './FullUser.module.css';
+import spinner from './../../../common-styles/Spinner.module.css';
 import {UserService} from "../../../services/UserService";
+import {withRouter} from "react-router-dom";
 
 class FullUser extends Component {
 
@@ -9,30 +11,47 @@ class FullUser extends Component {
     state = {user: {}};
     userId = this.props.userId;
 
-    async componentDidMount() {
-        this.setState({user: await this.api.getFullUser(this.userId)});
+    componentDidMount() {
+        setTimeout(async () => {
+            this.setState({user: await this.api.getFullUser(this.userId)});
+        }, 500);
     }
 
     render() {
-        const {id, name, username, email, address: {street} = {}, phone} = this.state.user;
+        const {match: {params: {id}}, userId} = this.props;
+        const {id: uId, name, username, email, address: {street} = {}, phone} = this.state.user;
 
         return (
             <div>
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title"> {id}. {name} </h5>
-                        <h6 className="card-subtitle mb-2 text-muted"> username: {username} </h6>
-                        <p className="card-text"> email: {email} <br/> street: {street} <br/> phone: {phone} </p>
+                { !uId && (
+                    <div>
+                        {(userId === +id) && <div className={spinner.loader}>Loading...</div>}
                     </div>
-                </div>
+                )}
 
-                <button className={`btn btn-outline-success btn-sm ${s.btnMargin}`}
-                        onClick={() => this.props.getTopUser(id)}>
-                    make user top
-                </button>
+                { uId && (
+                    <div>
+                        {(userId === +id) && (
+                            <div>
+                                <div className="card">
+                                    <div className="card-body">
+                                        <h5 className="card-title"> {uId}. {name} </h5>
+                                        <h6 className="card-subtitle mb-2 text-muted"> username: {username} </h6>
+                                        <p className="card-text"> email: {email} <br/> street: {street} <br/> phone: {phone} </p>
+                                    </div>
+                                </div>
+
+                                <button className={`btn btn-outline-success btn-sm ${s.btnMargin}`}
+                                        onClick={() => this.props.getTopUser(userId)}>
+                                    make user top
+                                </button>
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
         );
     }
 }
 
-export default FullUser;
+export default withRouter(FullUser);

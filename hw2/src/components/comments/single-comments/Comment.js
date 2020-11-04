@@ -1,43 +1,30 @@
 import React, {Component} from 'react';
 
-import s from './Comment.module.css';
 import FullComment from "../full-comment-info/FullComment";
+import {Link, Route, Switch, withRouter} from "react-router-dom";
 
 class Comment extends Component {
 
-    state = {showFullComment: false};
-
-    showHideFullComment = () => {
-        this.setState({showFullComment: !this.state.showFullComment});
-    }
-
     render() {
+        const {path, url} = this.props.match;
         const {id, name} = this.props.comment;
 
         return (
             <div>
-                <h5> {id}. {name} </h5>
+                <ul>
+                    <li>
+                        <Link to={`${url}/${id}`}>{id}. {name}</Link>
+                    </li>
+                </ul>
 
-                {
-                    !this.state.showFullComment &&
-                    <button className={`btn btn-info btn-sm ${s.btnShow}`}
-                            onClick={this.showHideFullComment}>
-                        show full comment
-                    </button>
-                }
-
-                { this.state.showFullComment && <FullComment commentId={id}/> }
-
-                {
-                    this.state.showFullComment &&
-                    <button className={`btn btn-outline-secondary btn-sm ${s.btnHide}`}
-                            onClick={this.showHideFullComment}>
-                        hide full comment
-                    </button>
-                }
+                <Switch>
+                    <Route path={`${path}/:id`}>
+                        <FullComment commentId={id}/>
+                    </Route>
+                </Switch>
             </div>
         );
     }
 }
 
-export default Comment;
+export default withRouter(Comment);

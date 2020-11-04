@@ -1,43 +1,30 @@
 import React, {Component} from 'react';
 
-import s from './User.module.css';
 import FullUser from "../full-user-info/FullUser";
+import {Link, Route, Switch, withRouter} from "react-router-dom";
 
 class User extends Component {
 
-    state = {showFullUser: false};
-
-    showHideFullUser = () => {
-        this.setState({showFullUser: !this.state.showFullUser});
-    }
-
     render() {
+        const {path, url} = this.props.match;
         const {id, name} = this.props.user;
 
         return (
             <div>
-                <h5> {id}. {name} </h5>
+                <ul>
+                    <li>
+                        <Link to={`${url}/${id}`}>{id}. {name}</Link>
+                    </li>
+                </ul>
 
-                {
-                    !this.state.showFullUser &&
-                    <button className={`btn btn-info btn-sm ${s.btnShow}`}
-                            onClick={this.showHideFullUser}>
-                        show full user
-                    </button>
-                }
-
-                { this.state.showFullUser && <FullUser userId={id} getTopUser={this.props.getTopUser}/> }
-
-                {
-                    this.state.showFullUser &&
-                    <button className={`btn btn-outline-secondary btn-sm ${s.btnHide}`}
-                            onClick={this.showHideFullUser}>
-                        hide full user
-                    </button>
-                }
+                <Switch>
+                    <Route path={`${path}/:id`}>
+                        <FullUser userId={id} getTopUser={this.props.getTopUser}/>
+                    </Route>
+                </Switch>
             </div>
         );
     }
 }
 
-export default User;
+export default withRouter(User);

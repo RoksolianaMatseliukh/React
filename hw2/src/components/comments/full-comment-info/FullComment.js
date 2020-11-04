@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 
 import {CommentService} from "../../../services/CommentService";
+import spinner from "../../../common-styles/Spinner.module.css";
+import {withRouter} from "react-router-dom";
 
 class FullComment extends Component {
 
@@ -8,25 +10,41 @@ class FullComment extends Component {
     state = {comment: {}};
     commentId = this.props.commentId
 
-    async componentDidMount() {
-        this.setState({comment: await this.api.getFullComment(this.commentId)});
+    componentDidMount() {
+        setTimeout(async () => {
+            this.setState({comment: await this.api.getFullComment(this.commentId)});
+        }, 500);
     }
 
     render() {
-        const {id, postId, name, email, body} = this.state.comment;
+        const {match: {params: {id}}, commentId} = this.props;
+        const {id: cId, postId, name, email, body} = this.state.comment;
 
         return (
             <div>
-                <div className="card">
-                    <div className="card-body">
-                        <h5 className="card-title"> id: {id} - postId: {postId} </h5>
-                        <h6 className="card-subtitle mb-2 text-muted"> name: {name} </h6>
-                        <p className="card-text"> email: {email} <br/> body: {body} </p>
+                { !cId && (
+                    <div>
+                        {(commentId === +id) && <div className={spinner.loader}>Loading...</div>}
                     </div>
-                </div>
+                )}
+
+                { cId && (
+                    <div>
+                        {(commentId === +id) && (
+                            <div className="card">
+                                <div className="card-body">
+                                    <h5 className="card-title"> id: {cId} - postId: {postId} </h5>
+                                    <h6 className="card-subtitle mb-2 text-muted"> name: {name} </h6>
+                                    <p className="card-text"> email: {email} <br/> body: {body} </p>
+                                </div>
+                            </div>
+                        )}
+                    </div>
+                )}
+
             </div>
         );
     }
 }
 
-export default FullComment;
+export default withRouter(FullComment);
