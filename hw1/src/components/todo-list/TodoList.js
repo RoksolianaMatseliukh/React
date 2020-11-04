@@ -34,7 +34,7 @@ class TodoList extends Component {
         return (
             <div>
 
-                { this.state.uncompletedTodo && <h3> All task(s): </h3> }
+                { this.state.uncompletedTodo && <h3> Task(s): </h3> }
 
                 { !this.state.uncompletedTodo && <h3> Well done all tasks are finished! </h3> }
 
