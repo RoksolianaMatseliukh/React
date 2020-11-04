@@ -1,0 +1,12 @@
+
+.linkView {
+    color: black;
+}
+
+.linkView:hover {
+    text-decoration: none;
+}
+
+.activeLink {
+    color: royalblue;
+}

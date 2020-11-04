@@ -1,0 +1,8 @@
+
+.topUser {
+    color: darkgreen;
+    border: 1px solid darkgreen;
+    width: fit-content;
+    padding: 10px;
+    margin-bottom: 20px;
+}
