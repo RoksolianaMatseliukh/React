@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
+import s from './Users.module.css';
 import User from "../single-user/User";
 import {UserService} from "../../../services/UserService";
-import s from './Users.module.css';
 
 class Users extends Component {
 

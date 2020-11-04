@@ -17,16 +17,13 @@ class FullComment extends Component {
 
         return (
             <div>
-                {
-                    id &&
-                    <div className="card">
-                        <div className="card-body">
-                            <h5 className="card-title"> id: {id} - postId: {postId} </h5>
-                            <h6 className="card-subtitle mb-2 text-muted"> name: {name} </h6>
-                            <p className="card-text"> email: {email} <br/> body: {body} </p>
-                        </div>
+                <div className="card">
+                    <div className="card-body">
+                        <h5 className="card-title"> id: {id} - postId: {postId} </h5>
+                        <h6 className="card-subtitle mb-2 text-muted"> name: {name} </h6>
+                        <p className="card-text"> email: {email} <br/> body: {body} </p>
                     </div>
-                }
+                </div>
             </div>
         );
     }

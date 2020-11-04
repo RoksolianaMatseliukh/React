@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
-import {UserService} from "../../../services/UserService";
 import s from './FullUser.module.css';
+import {UserService} from "../../../services/UserService";
 
 class FullUser extends Component {
 
