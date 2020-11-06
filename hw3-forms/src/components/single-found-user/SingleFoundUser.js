@@ -1,7 +1,8 @@
-import {Link, Route, Switch, withRouter} from "react-router-dom";
+import {NavLink, Route, Switch, withRouter} from "react-router-dom";
 import React, {Component} from 'react';
 
 import FullUserInfo from "../full-user-info/FullUserInfo";
+import s from './SingleFoundUser.module.css';
 
 class SingleFoundUser extends Component {
 
@@ -12,11 +13,7 @@ class SingleFoundUser extends Component {
             <div>
                 {id && (
                     <div>
-                        <ul>
-                            <li>
-                                <Link to={`/user/${id}`}>{id}. {name}</Link>
-                            </li>
-                        </ul>
+                        <NavLink  className={s.linkView} to={`/user/${id}`}>{id}. {name}</NavLink>
 
                         <Switch>
                             <Route path={`/user/:id`}>
