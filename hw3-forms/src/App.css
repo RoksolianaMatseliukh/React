@@ -1,0 +1,9 @@
+
+body {
+    padding: 15px;
+}
+
+.formsView {
+    display: flex;
+    justify-content: space-around;
+}
