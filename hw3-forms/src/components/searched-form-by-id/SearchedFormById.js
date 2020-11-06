@@ -28,7 +28,7 @@ class SearchedFormById extends Component {
 
     onInputSearchUser = async (e) => {
         if (!e.target.value) {
-            this.setState({warning: false});
+            this.setState({user: {}, warning: false});
             this.props.history.push('/');
             return;
         }
