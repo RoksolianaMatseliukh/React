@@ -15,7 +15,7 @@ class SearchedFormByName extends Component {
                 <h3> search user(s) by name: </h3>
 
                 <form>
-                    <input type="text" value={this.state.name} onChange={this.onInputSearchUser}/>
+                    <input type="text" value={this.state.name} placeholder={'enter name'} onChange={this.onInputSearchUser}/>
                 </form>
 
                 { this.state.name && <FoundUsers name={this.state.name}/> }

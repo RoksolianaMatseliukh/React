@@ -16,10 +16,10 @@ class SearchedFormById extends Component {
                 <h3> search user by id: </h3>
 
                 <form>
-                    <input type="number" value={this.state.id} onChange={this.onInputSearchUser}/>
+                    <input type="number" value={this.state.id} placeholder={'enter id'} onChange={this.onInputSearchUser}/>
                 </form>
 
-                { this.state.warning && <p> there is no user with this id </p> }
+                { this.state.warning && <p style={{color: 'red'}}> there is no user with this id </p> }
 
                 { (!this.state.warning && this.state.user.id) && <SingleFoundUser singleFoundUser={this.state.user}/> }
             </div>

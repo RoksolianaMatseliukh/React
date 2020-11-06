@@ -18,7 +18,7 @@ class FoundUsers extends Component {
 
         return (
             <div>
-                { !foundUsers.length && <p> there is no user with this name </p> }
+                { !foundUsers.length && <p style={{color: 'red'}}> there is no user with this name </p> }
                 {
                     foundUsers.map(user => <SingleFoundUser key={user.id} singleFoundUser={user}/>)
                 }
