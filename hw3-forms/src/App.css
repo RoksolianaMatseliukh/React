@@ -1,4 +1,13 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.hintView {
+    font-family: 'Indie Flower', cursive;
+    color: #1f55bb;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
 body {
     padding: 25px 80px;
 }

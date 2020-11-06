@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import React from "react";
 
 import './App.css';
@@ -9,17 +9,21 @@ import SearchedFormWithSelect from "./components/searched-form-with-select/Searc
 
 function App() {
   return (
-      <Router>
-          <Switch>
-              <Router path='/'>
+      <div>
+          <h2 className='hintView'> find a user and click on the result - to find out full information </h2>
+
+          <Router>
+            <Switch>
+              <Route path='/'>
                   <div className='formsView'>
                       <SearchedFormWithSelect/>
                       <SearchedFormById/>
                       <SearchedFormByName/>
                   </div>
-              </Router>
+              </Route>
           </Switch>
-      </Router>
+        </Router>
+      </div>
   );
 }
 
