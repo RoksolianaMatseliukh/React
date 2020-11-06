@@ -13,11 +13,11 @@ class FullUserInfo extends Component {
             <div>
                 {(uId === +id) && (
                     <div className={s.foundUser}>
-                        {uId}. {name} <hr/>
-                        {username} <br/>
-                        {email} <br/>
-                        {street} <br/>
-                        {phone}
+                        <span> {uId}. {name} </span> <hr/>
+                        <b> username: </b> {username} <br/>
+                        <b> email: </b> {email} <br/>
+                        <b> street: </b> {street} <br/>
+                        <b> phone: </b> {phone}
                     </div>
                 )}
             </div>

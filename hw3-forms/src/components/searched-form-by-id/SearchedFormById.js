@@ -26,7 +26,7 @@ class SearchedFormById extends Component {
                     </div>
                 </form>
 
-                { this.state.warning && <p style={{color: 'red'}}> there is no user with this id </p> }
+                { this.state.warning && <p className={s.warningView}> there is no user with this id </p> }
 
                 { (!this.state.warning && this.state.user.id) && <SingleFoundUser singleFoundUser={this.state.user}/> }
             </div>

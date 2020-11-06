@@ -14,9 +14,7 @@ function App() {
               <Router path='/'>
                   <div className='formsView'>
                       <SearchedFormWithSelect/>
-                      <hr/>
                       <SearchedFormById/>
-                      <hr/>
                       <SearchedFormByName/>
                   </div>
               </Router>

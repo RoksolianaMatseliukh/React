@@ -3,11 +3,17 @@ import {withRouter} from "react-router-dom";
 
 import FoundUsers from "../found-users/FoundUsers";
 import s from './../searched-form-by-id/SearchedFormById.module.css';
+import {UserService} from "../../services/UserService";
 
 class SearchedFormByName extends Component {
 
+    api = new UserService();
     previousName = '';
-    state = {name: ''};
+    state = {users: [], foundUsers: [], name: ''};
+
+    async componentDidMount() {
+        this.setState({users: await this.api.getUsers()});
+    }
 
     render() {
 
@@ -25,19 +31,21 @@ class SearchedFormByName extends Component {
                     </div>
                 </form>
 
-                { this.state.name && <FoundUsers name={this.state.name}/> }
+                { this.state.name && <FoundUsers foundUsers={this.state.foundUsers}/> }
             </div>
         );
     }
 
     onInputSearchUser = (e) => {
+        const foundUsers = this.state.users.filter(user => user.name.toLowerCase().includes(e.target.value.toLowerCase()));
+
         if (!e.target.value || this.previousName !== e.target.value) {
-            this.setState({name: e.target.value});
+            this.setState({foundUsers, name: e.target.value});
             this.props.history.push('/');
             return;
         }
 
-        this.setState({name: e.target.value});
+        this.setState({foundUsers, name: e.target.value});
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {

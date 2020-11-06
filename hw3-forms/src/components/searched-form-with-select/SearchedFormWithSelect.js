@@ -24,7 +24,7 @@ class SearchedFormWithSelect extends Component {
                     <select className="custom-select" onChange={this.onInputSearchUser}>
                     <option value=''/>
                     {this.state.users.map(user =>
-                        <option key={user.id} value={user.id}> {user.name}</option>
+                        <option key={user.id} value={user.id}> {user.name} </option>
                     )}
                     </select>
                 </div>
