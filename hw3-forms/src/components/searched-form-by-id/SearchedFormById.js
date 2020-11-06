@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
 
+import s from './SearchedFormById.module.css';
 import SingleFoundUser from "../single-found-user/SingleFoundUser";
 import {UserService} from "../../services/UserService";
 
@@ -13,10 +14,16 @@ class SearchedFormById extends Component {
     render() {
         return (
             <div>
-                <h3> search user by id: </h3>
+                <h3 className={s.titleView}> search user by id: </h3>
 
                 <form>
-                    <input type="number" value={this.state.id} placeholder={'enter id'} onChange={this.onInputSearchUser}/>
+                    <div className="form-group w-60">
+                        <input type="number"
+                               value={this.state.id}
+                               className="form-control"
+                               placeholder="enter id"
+                               onChange={this.onInputSearchUser}/>
+                    </div>
                 </form>
 
                 { this.state.warning && <p style={{color: 'red'}}> there is no user with this id </p> }

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from "react-router-dom";
 
 import FoundUsers from "../found-users/FoundUsers";
+import s from './../searched-form-by-id/SearchedFormById.module.css';
 
 class SearchedFormByName extends Component {
 
@@ -12,10 +13,16 @@ class SearchedFormByName extends Component {
 
         return (
             <div>
-                <h3> search user(s) by name: </h3>
+                <h3 className={s.titleView}> search user(s) by name: </h3>
 
                 <form>
-                    <input type="text" value={this.state.name} placeholder={'enter name'} onChange={this.onInputSearchUser}/>
+                    <div className="form-group w-60">
+                        <input type="text"
+                               value={this.state.name}
+                               className="form-control"
+                               placeholder="enter name"
+                               onChange={this.onInputSearchUser}/>
+                    </div>
                 </form>
 
                 { this.state.name && <FoundUsers name={this.state.name}/> }

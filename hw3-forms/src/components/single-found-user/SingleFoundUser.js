@@ -10,10 +10,10 @@ class SingleFoundUser extends Component {
         const {id, name} = this.props.singleFoundUser;
 
         return (
-            <div>
+            <div className={s.listOfLinks}>
                 {id && (
                     <div>
-                        <NavLink  className={s.linkView} to={`/user/${id}`}>{id}. {name}</NavLink>
+                        <NavLink className={s.linkView} activeClassName={s.activeLinkView} to={`/user/${id}`}>{id}. {name}</NavLink>
 
                         <Switch>
                             <Route path={`/user/:id`}>

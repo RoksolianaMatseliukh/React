@@ -3,8 +3,21 @@
 
 .linkView {
     font-family: 'Indie Flower', cursive;
-    color: #386e41;
+    color: #1f55bb;
     font-size: 25px;
     text-decoration: none;
 }
 
+.linkView:hover {
+    color: #05224c;
+    text-decoration: none;
+}
+
+.listOfLinks {
+    margin-top: 20px;
+}
+
+.activeLinkView {
+    color: #05224c;
+    font-weight: bold;
+}

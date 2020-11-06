@@ -1,0 +1,9 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+.titleView {
+    font-family: 'Indie Flower', cursive;
+    color: #3f568b;
+    font-size: 30px;
+    font-weight: bold;
+}
