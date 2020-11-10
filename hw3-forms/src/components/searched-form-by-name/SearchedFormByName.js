@@ -15,27 +15,6 @@ class SearchedFormByName extends Component {
         this.setState({users: await this.api.getUsers()});
     }
 
-    render() {
-
-        return (
-            <div>
-                <h3 className={s.titleView}> search user(s) by name: </h3>
-
-                <form>
-                    <div className="form-group w-60">
-                        <input type="text"
-                               value={this.state.name}
-                               className="form-control"
-                               placeholder="enter name"
-                               onChange={this.onInputSearchUser}/>
-                    </div>
-                </form>
-
-                { this.state.name && <FoundUsers foundUsers={this.state.foundUsers}/> }
-            </div>
-        );
-    }
-
     onInputSearchUser = (e) => {
         const foundUsers = this.state.users.filter(user => user.name.toLowerCase().includes(e.target.value.toLowerCase()));
 
@@ -50,6 +29,31 @@ class SearchedFormByName extends Component {
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         this.previousName = prevState;
+    }
+
+    submitSearch = (e) => {
+        e.preventDefault();
+    }
+
+    render() {
+
+        return (
+            <div>
+                <h3 className={s.titleView}> search user(s) by name: </h3>
+
+                <form onSubmit={this.submitSearch}>
+                    <div className="form-group w-60">
+                        <input type="text"
+                               value={this.state.name}
+                               className="form-control"
+                               placeholder="enter name"
+                               onChange={this.onInputSearchUser}/>
+                    </div>
+                </form>
+
+                { this.state.name && <FoundUsers foundUsers={this.state.foundUsers}/> }
+            </div>
+        );
     }
 }
 
