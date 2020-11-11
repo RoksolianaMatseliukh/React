@@ -1,0 +1,31 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Paprika&display=swap');
+
+body {
+    padding: 15px;
+}
+
+.linkView {
+    color: #4d9b9c;
+    text-decoration: none;
+    font-family: 'Paprika', cursive;
+    font-size: 27px;
+}
+
+.linkView:hover {
+    color: #0e444a;
+    text-decoration: none;
+}
+
+.activeLinkView {
+    color: #0b363b;
+}
+
+.listOfLinks {
+    display: flex;
+    justify-content: center;
+}
+
+.btnMargin {
+    margin-left: 10px;
+}

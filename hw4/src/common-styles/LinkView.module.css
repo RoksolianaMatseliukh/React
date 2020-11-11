@@ -1,0 +1,27 @@
+
+.linkView {
+    color: #4e66b2;
+    font-family: 'Paprika', cursive;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.linkView:hover {
+    color: #20397d;
+    text-decoration: none;
+}
+
+.innerLinkView {
+    color: #4e66b2;
+    font-family: 'Paprika', cursive;
+    font-size: 15px;
+    padding-left: 15px;
+    display: block;
+    margin-bottom: 7px;
+}
+
+.innerLinkView:hover {
+    color: #20397d;
+    text-decoration: none;
+}

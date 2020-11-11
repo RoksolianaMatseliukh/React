@@ -1,0 +1,31 @@
+
+.linkView {
+    color: #4e66b2;
+    font-family: 'Xanh Mono', monospace;
+    font-size: 20px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.linkView:hover {
+    color: #20397d;
+    text-decoration: none;
+}
+
+.activeLinkView {
+    color: #20397d;
+}
+
+.innerLinkView {
+    color: #4e66b2;
+    font-family: 'Xanh Mono', monospace;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 7px;
+}
+
+.innerLinkView:hover {
+    color: #20397d;
+    text-decoration: none;
+}
