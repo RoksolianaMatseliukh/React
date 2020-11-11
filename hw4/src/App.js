@@ -24,16 +24,16 @@ function App() {
         <hr/>
 
         <Switch>
-            <Route exact path="/users/:id/post/:id/comment/:id" component={FullComment} />
-            <Route exact path="/posts/:id/comment/:id" component={FullComment} />
-            <Route exact path="/users/:id/post/:id" component={FullPost} />
-            <Route exact path="/users/:id" component={FullUser} />
-            <Route exact path="/posts/:id" component={FullPost} />
-            <Route exact path="/comments/:id" component={FullComment} />
-            <Route exact path="/users" component={AllUsers} />
-            <Route exact path="/posts" component={AllPosts} />
-            <Route exact path="/comments" component={AllComments} />
-            <Route exact path="/" component={Home} />
+            <Route path="/users/:id/post/:id/comment/:id" exact component={FullComment} />
+            <Route path="/posts/:id/comment/:id" exact component={FullComment} />
+            <Route path="/users/:id/post/:id" exact component={FullPost} />
+            <Route path="/users/:id" exact component={FullUser} />
+            <Route path="/posts/:id" exact component={FullPost} />
+            <Route path="/comments/:id" exact component={FullComment} />
+            <Route path="/users" exact component={AllUsers} />
+            <Route path="/posts" exact component={AllPosts} />
+            <Route path="/comments" exact component={AllComments} />
+            <Route path="/" exact component={Home} />
 
             <Route component={UnknownPage}/>
         </Switch>
