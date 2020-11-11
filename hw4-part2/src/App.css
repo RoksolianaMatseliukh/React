@@ -1,0 +1,32 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@1&display=swap');
+
+body {
+    padding: 15px;
+}
+
+.linkView {
+    color: #bc89d2;
+    text-decoration: none;
+    font-family: 'Xanh Mono', monospace;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.linkView:hover {
+    color: #5a1679;
+    text-decoration: none;
+}
+
+.activeLinkView {
+    color: #5a1679;
+}
+
+.listOfLinks {
+    display: flex;
+    justify-content: center;
+}
+
+.margin {
+    margin-left: 10px;
+}
