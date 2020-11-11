@@ -35,7 +35,7 @@ function App() {
             <Route exact path="/comments" component={AllComments} />
             <Route exact path="/" component={Home} />
 
-            <Route exact component={UnknownPage}/>
+            <Route component={UnknownPage}/>
         </Switch>
     </div>
   );
