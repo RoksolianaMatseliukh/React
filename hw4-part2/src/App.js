@@ -1,10 +1,11 @@
-import './App.css';
 import React from "react";
 import {Switch, Route, Redirect, NavLink} from "react-router-dom";
+
+import './App.css';
+import AllComments from "./components/comments/all-comments/AllComments";
+import AllPosts from "./components/posts/all-posts/AllPosts";
 import AllUsers from "./components/users/all-users/AllUsers";
 import Home from "./components/home/Home";
-import AllPosts from "./components/posts/all-posts/AllPosts";
-import AllComments from "./components/comments/all-comments/AllComments";
 
 function App() {
   return (
