@@ -1,5 +1,5 @@
 import React from "react";
-import {Switch, Route, Redirect, NavLink} from "react-router-dom";
+import {Switch, Route, NavLink} from "react-router-dom";
 
 import './App.css';
 import AllComments from "./components/comments/all-comments/AllComments";
@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
         <div className="listOfLinks">
-            <NavLink exact to="/welcome" className="linkView" activeClassName="activeLinkView">HOME</NavLink>
+            <NavLink exact to="/" className="linkView" activeClassName="activeLinkView">HOME</NavLink>
             <NavLink to="/users" className="linkView btnMargin" activeClassName="activeLinkView">USERS</NavLink>
             <NavLink to="/posts" className="linkView btnMargin" activeClassName="activeLinkView">POSTS</NavLink>
             <NavLink to="/comments" className="linkView btnMargin" activeClassName="activeLinkView">COMMENTS</NavLink>
@@ -33,11 +33,9 @@ function App() {
             <Route exact path="/users" component={AllUsers} />
             <Route exact path="/posts" component={AllPosts} />
             <Route exact path="/comments" component={AllComments} />
-            <Route exact path="/welcome" component={Home} />
+            <Route exact path="/" component={Home} />
 
-            <Route component={UnknownPage}/>
-
-            <Redirect from="/" to="/welcome"/>
+            <Route exact component={UnknownPage}/>
         </Switch>
     </div>
   );
