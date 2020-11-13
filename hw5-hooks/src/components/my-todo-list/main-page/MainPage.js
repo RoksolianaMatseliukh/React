@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 
+import AddTodoItem from "../todo-list/add-todo-item/AddTodoItem";
 import DoneList from "../done-list/DoneList";
 import s from './MainPage.module.css';
 import TodoList from "../todo-list/TodoList";
-import AddTodoItem from "../todo-list/add-todo-item/AddTodoItem";
 
 function MainPage() {
 
