@@ -9,17 +9,17 @@ function SingleTodoItem ({todoItem, index, changePriority, removeTodo, showDetai
     return (
         <ul className={s.todo}>
 
-            <li className={isPriority ? s.priority : undefined}
+            <li className={isPriority ? s.priority : s.nonPriority}
                 onClick={() => showDetails(index)}>
                 {name}
             </li>
 
             { todoDetails &&
-            <span>
-                id: {id} <br/>
-                name: {name} <br/>
-                priority: {isPriority.toString()} <br/>
-            </span> }
+                <span>
+                    id: {id} <br/>
+                    name: {name} <br/>
+                    priority: {isPriority.toString()} <br/>
+                </span> }
 
             <button onClick={() => changePriority(index)}
                     className="btn btn-outline-warning btn-sm">

@@ -3,7 +3,7 @@
     margin-bottom: 30px;
 }
 
-.todo li {
+.nonPriority {
     cursor: pointer;
 }
 
@@ -13,6 +13,7 @@
 }
 
 .priority {
+    cursor: pointer;
     background-color: orange;
     font-weight: bold;
     padding: 7px;
