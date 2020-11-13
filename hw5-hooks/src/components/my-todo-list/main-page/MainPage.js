@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import DoneList from "../done-list/DoneList";
 import s from './MainPage.module.css';
 import TodoList from "../todo-list/TodoList";
+import AddTodoItem from "../todo-list/add-todo-item/AddTodoItem";
 
 function MainPage() {
 
@@ -17,6 +18,7 @@ function MainPage() {
     const [isFormVisible, setIsFormVisible] = useState(false);
     const [todoList, setTodoList] = useState([]);
     const [doneList, setDoneList] = useState([]);
+    const [newTodo, setNewTodo] = useState('');
 
     const changePriority = (index) => {
         const newToDoList = [...todoList];
@@ -42,6 +44,19 @@ function MainPage() {
         setTodoList(newToDoList);
     }
 
+    const setNewTodoItem = (e) => {
+        setNewTodo(e.target.value);
+    }
+
+    const addTodoItem = (e) => {
+        e.preventDefault();
+
+        const id = new Date().getTime();
+        const newTodoItem = {id, name: newTodo, isPriority: false, showDetails: false};
+        setTodoList([...todoList, newTodoItem]);
+        setNewTodo('');
+    }
+
     useEffect(() => {
         setTodoList(myTodoList);
     }, []);
@@ -55,6 +70,10 @@ function MainPage() {
 
             { isFormVisible &&
                 <div className={s.listsView}>
+                    <AddTodoItem setNewTodoItem={setNewTodoItem}
+                                 addTodoItem={addTodoItem}
+                                 newTodo={newTodo}/>
+
                     <TodoList todoList={todoList}
                               changePriority={changePriority}
                               removeTodo={removeTodo}
@@ -64,7 +83,7 @@ function MainPage() {
                 </div>
             }
         </div>
-    )
+    );
 }
 
 export default MainPage;

@@ -2,20 +2,31 @@ import React from "react";
 
 import SingleTodoItem from "./single-todo-item/SingleTodoItem";
 
-const TodoList = ({todoList, changePriority, removeTodo, showDetails}) => (
-    <div>
-        { todoList.length ? <h4> Task(s) to do: </h4> : <p> Well done, all tasks are finished! </p> }
-        <br/>
+function TodoList ({todoList, changePriority, removeTodo, showDetails}) {
 
-        {
-            todoList.map((todoItem, i) => <SingleTodoItem key={todoItem.id}
-                                                          todoItem={todoItem}
-                                                          index={i}
-                                                          changePriority={changePriority}
-                                                          removeTodo={removeTodo}
-                                                          showDetails={showDetails}/>)
+    const msg = () => {
+        if (todoList.length) {
+            return <h4> Task(s) to do: </h4>;
         }
-    </div>
-);
+
+        return <p> Well done, all tasks are finished! </p>;
+    }
+
+    return (
+        <div>
+            { msg() }
+            <br/>
+
+            {
+                todoList.map((todoItem, i) => <SingleTodoItem key={todoItem.id}
+                                                              todoItem={todoItem}
+                                                              index={i}
+                                                              changePriority={changePriority}
+                                                              removeTodo={removeTodo}
+                                                              showDetails={showDetails}/>)
+            }
+        </div>
+    );
+}
 
 export default TodoList;

@@ -3,7 +3,7 @@ export class TodosService {
     _url = 'https://jsonplaceholder.typicode.com/todos';
 
     async getAllTodos() {
-        return (await fetch(`${this._url}`)).json();
+        return (await fetch(this._url)).json();
     }
 
     async getFoundTodoById(todoId) {

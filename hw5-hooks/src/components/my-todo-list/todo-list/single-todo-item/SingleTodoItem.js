@@ -2,32 +2,38 @@ import React from "react";
 
 import s from './SingleTodoItem.module.css';
 
-const SingleTodoItem = ({todoItem, index, changePriority, removeTodo, showDetails}) => (
-    <ul className={s.todo}>
+function SingleTodoItem ({todoItem, index, changePriority, removeTodo, showDetails}) {
 
-        <li className={todoItem.isPriority ? s.priority : undefined}
-           onClick={() => showDetails(index)}>
-            {todoItem.name}
-        </li>
+    const {id, name, isPriority, showDetails: todoDetails} = todoItem;
 
-        { todoItem.showDetails &&
+    return (
+        <ul className={s.todo}>
+
+            <li className={isPriority ? s.priority : undefined}
+                onClick={() => showDetails(index)}>
+                {name}
+            </li>
+
+            { todoDetails &&
             <span>
-                id: {todoItem.id} <br/>
-                name: {todoItem.name} <br/>
-                priority: {todoItem.isPriority.toString()} <br/>
+                id: {id} <br/>
+                name: {name} <br/>
+                priority: {isPriority.toString()} <br/>
             </span> }
 
-        <button onClick={() => changePriority(index)}
-                className="btn btn-outline-warning btn-sm">
-            {!todoItem.isPriority ? 'make priority' : 'make non priority'}
-        </button>
+            <button onClick={() => changePriority(index)}
+                    className="btn btn-outline-warning btn-sm">
+                {!isPriority ? 'make priority' : 'make non priority'}
+            </button>
 
-        <button onClick={() => removeTodo(todoItem, index)}
-                className={`btn btn-outline-danger btn-sm ${s.btnMargin}`}>
-            remove
-        </button>
+            <button onClick={() => removeTodo({id, name}, index)}
+                    className={`btn btn-outline-danger btn-sm ${s.btnMargin}`}>
+                remove
+            </button>
 
-    </ul>
-);
+        </ul>
+    );
+
+}
 
 export default SingleTodoItem;
