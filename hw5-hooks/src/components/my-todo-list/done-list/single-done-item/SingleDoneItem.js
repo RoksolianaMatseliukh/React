@@ -1,5 +1,5 @@
 import React from "react";
 
-const SingleDoneItem = ({doneItem}) => <ul> <li> {doneItem.name} </li> </ul>;
+const SingleDoneItem = ({doneItem: {name}}) => <ul> <li> {name} </li> </ul>;
 
 export default SingleDoneItem;
