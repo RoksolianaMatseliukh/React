@@ -61,6 +61,9 @@ function RegistrationForm() {
             { (loginMsg.startsWith('enter') || passwordMsg.startsWith('enter')) &&
                 <h4> fill both fields </h4> }
 
+
+            { loginMsg.startsWith('invalid') && <p> {loginMsg} </p> }
+
             <div>
                 <input type="text"
                        name="login"
@@ -68,7 +71,8 @@ function RegistrationForm() {
                        onChange={setFormData}/>
             </div>
 
-            { loginMsg.startsWith('invalid') && <p> {loginMsg} </p> }
+
+            { passwordMsg.startsWith('invalid') && <p> {passwordMsg} </p> }
 
             <div className={s.inputPasswordView}>
                 <input type={!isPasswordHidden ? 'text' : 'password'}
@@ -80,8 +84,6 @@ function RegistrationForm() {
                      onClick={() => setIsPasswordHidden(prevValue => !prevValue)}
                      alt="show_hide_password"/>
             </div>
-
-            { passwordMsg.startsWith('invalid') && <p> {passwordMsg} </p> }
 
             <button type="submit"
                     className="btn btn-success btn-sm"
