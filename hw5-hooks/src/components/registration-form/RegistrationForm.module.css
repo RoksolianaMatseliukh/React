@@ -1,0 +1,18 @@
+
+.inputPasswordView img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.formView h4 {
+    color: orange;
+}
+
+.formView p {
+    color: red;
+}
+
+.formView div {
+    margin-bottom: 10px;
+}

@@ -19,7 +19,7 @@ function App() {
         <hr/>
 
         <Switch>
-            <Route path="/users" component={AllUsers}/>
+            <Route path="/users" component={AllUsers} />
             <Route path="/posts" component={AllPosts}/>
             <Route path="/comments" component={AllComments}/>
             <Route path="/welcome" component={Home}/>

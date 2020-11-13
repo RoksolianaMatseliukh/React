@@ -1,0 +1,10 @@
+
+.listsView {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+.titleView {
+    font-weight: bold;
+}

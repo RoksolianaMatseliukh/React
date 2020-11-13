@@ -1,0 +1,24 @@
+
+.todo {
+    margin-bottom: 30px;
+}
+
+.todo li {
+    cursor: pointer;
+}
+
+.todo span {
+    color: #044404;
+    font-weight: bold;
+}
+
+.priority {
+    background-color: orange;
+    font-weight: bold;
+    padding: 7px;
+    margin-bottom: 7px;
+}
+
+.btnMargin {
+    margin-left: 7px;
+}
