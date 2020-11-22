@@ -7,14 +7,13 @@ import s from '../../cart/cart-item/CartItem.module.css';
 export const WishListItem = ({item}) => {
 
     const {title, price, image} = item;
-
     const dispatch = useDispatch();
 
     return (
         <div className={s.productView}>
             <span className={`material-icons ${s.deletedIcon}`}
                   onClick={() => dispatch(itemInWishListToggle(item))}
-                  title="delete from wish list">
+                  title="remove from wish list">
                 delete_forever
             </span>
 

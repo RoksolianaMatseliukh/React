@@ -13,7 +13,7 @@ export const CartItem = ({item}) => {
         <div className={s.productView}>
             <span className={`material-icons ${s.deletedIcon}`}
                   onClick={() => dispatch(itemInCartToggle(item))}
-                  title="delete from cart">
+                  title="remove from cart">
                 delete_forever
             </span>
 

@@ -7,9 +7,9 @@ import s from './ProductItem.module.css';
 export const ProductItem = ({product}) => {
 
     const {id, title, price, description, image} = product;
-    const dispatch = useDispatch();
     const cart = useSelector(({cartReducer: {cart}}) => cart);
     const wishList = useSelector(({wishListReducer: {wishList}}) => wishList);
+    const dispatch = useDispatch();
 
     const isItemInCartWishList = () => {
         const isItemInCart = cart.find(item => item.id === id);
