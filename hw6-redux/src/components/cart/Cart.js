@@ -13,12 +13,12 @@ const Cart = ({history}) => {
         if (cart.length) {
 
             const goodsQuantity = cart.reduce((acc, {quantity}) => acc + quantity, 0);
-            const totalAmountOfGoods = cart.reduce((acc, {price, quantity}) => acc + price * quantity, 0);
+            const totalCostOfGoods = cart.reduce((acc, {price, quantity}) => acc + price * quantity, 0);
 
             return (
                 <>
                     <h4> Goods in cart: { goodsQuantity } </h4>
-                    <h5> The total amount of good(s): { totalAmountOfGoods } $ </h5>
+                    <h5> The total cost of good(s): { totalCostOfGoods } $ </h5>
                 </>
             );
         }
