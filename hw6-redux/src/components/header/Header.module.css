@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Paprika&display=swap');
+
+.linkView {
+    color: #98a312;
+    text-decoration: none;
+    font-family: 'Paprika', cursive;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.linkView:hover {
+    color: #104d1a;
+    text-decoration: none;
+}
+
+.activeLinkView {
+    color: #104d1a;
+    font-size: 19px;
+}
+
+.listOfLinks {
+    display: flex;
+    justify-content: center;
+}
+
+.btnMargin {
+    margin-left: 25px;
+}
+
+.iconsView {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+.iconsView img {
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.iconsView span {
+    color: black;
+}

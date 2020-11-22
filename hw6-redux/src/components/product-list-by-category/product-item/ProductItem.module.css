@@ -1,0 +1,30 @@
+
+.productView {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.productView img {
+    width: 200px;
+    height: 200px;
+}
+
+.addToCart {
+    color: green;
+    margin-left: 15px;
+}
+
+.removeFromCart {
+    color: #b92626;
+    margin-left: 15px;
+}
+
+.addToCart {
+    color: green;
+    margin-left: 15px;
+}
+
+.favorite {
+    color: #b92626;
+    margin-left: 15px;
+}

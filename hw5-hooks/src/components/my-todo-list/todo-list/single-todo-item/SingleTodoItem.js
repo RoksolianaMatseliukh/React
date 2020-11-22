@@ -4,17 +4,17 @@ import s from './SingleTodoItem.module.css';
 
 function SingleTodoItem ({todoItem, index, changePriority, removeTodo, showDetails}) {
 
-    const {id, name, isPriority, showDetails: todoDetails} = todoItem;
+    const {id, name, isPriority, showDetails: areDetailsShown} = todoItem;
 
     return (
         <ul className={s.todo}>
 
-            <li className={isPriority ? s.priority : s.nonPriority}
+            <li className={isPriority ?s.priority :s.nonPriority}
                 onClick={() => showDetails(index)}>
                 {name}
             </li>
 
-            { todoDetails &&
+            { areDetailsShown &&
                 <span>
                     id: {id} <br/>
                     name: {name} <br/>

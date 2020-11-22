@@ -1,0 +1,34 @@
+
+.productView {
+    margin-right: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 12px;
+    width: 190px;
+}
+
+.productView img {
+    width: 55px;
+    height: 55px;
+}
+
+.minus {
+    color: #b92626;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.plus {
+    color: #0d532c;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.quantity {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.deletedIcon {
+    color: #cc1010;
+}
