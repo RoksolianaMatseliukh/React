@@ -9,10 +9,10 @@ import {WishListWrapper} from "../wish-list/WishList";
 
 export const Routes = () => (
     <Switch>
-        <Route path="/category/:nameOfCategory" component={ProductListByCategory} />
-        <Route path="/all_products" component={ProductListByCategory} />
-        <Route path="/wish_list" component={WishListWrapper} />
-        <Route path="/cart" component={CartWrapper} />
+        <Route path="/category/:nameOfCategory" exact component={ProductListByCategory} />
+        <Route path="/all_products" exact component={ProductListByCategory} />
+        <Route path="/wish_list" exact component={WishListWrapper} />
+        <Route path="/cart" exact component={CartWrapper} />
         <Route path="/" exact component={Home} />
 
         <Route component={UnknownPage}/>
