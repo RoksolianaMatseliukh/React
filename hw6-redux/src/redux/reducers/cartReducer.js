@@ -22,24 +22,31 @@ export const cartReducer = (state = initialState, action) => {
 
         case INCREASE_ITEM_QUANTITY:
 
-            const cartForIncQuantity = [...state.cart];
-            const itemForIncQuantity = cartForIncQuantity.find(item => (item.id === action.payload.id));
-            itemForIncQuantity.quantity += 1;
+            const cartWithIncQuantity = state.cart.map(item => {
+                if (item.id === action.payload.id) {
+                    return { ...item, quantity: item.quantity + 1 };
+                }
+                return item;
+            });
 
-            return { ...state, cart: cartForIncQuantity };
+            return { ...state, cart: cartWithIncQuantity };
 
         case DECREASE_ITEM_QUANTITY:
 
-            const cartForDecQuantity = [...state.cart];
-            const itemForDecQuantity = cartForDecQuantity.find(item => (item.id === action.payload.id));
+            const foundItem = state.cart.find(item => item.quantity === 1);
 
-            if (itemForDecQuantity.quantity === 1) {
-                return { ...state, cart: cartForDecQuantity };
+            if (foundItem) {
+                return { ...state };
             }
 
-            itemForDecQuantity.quantity -= 1;
+            const cartWithDecQuantity = state.cart.map(item => {
+                if (item.id === action.payload.id) {
+                    return { ...item, quantity: item.quantity - 1 };
+                }
+                return item;
+            });
 
-            return { ...state, cart: cartForDecQuantity };
+            return { ...state, cart: cartWithDecQuantity };
 
         default:
             return state;
