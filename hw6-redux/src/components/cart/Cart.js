@@ -12,7 +12,7 @@ const Cart = ({history}) => {
     const getAdditionalInfo = () => {
         if (cart.length) {
 
-            const totalAmountOfGoods = cart.reduce((acc, {price, quantity}) => acc + (price * quantity), 0);
+            const totalAmountOfGoods = cart.reduce((acc, {price, quantity}) => acc + price * quantity, 0);
             const goodsQuantity = cart.reduce((acc, {quantity}) => acc + quantity, 0);
 
             return (
