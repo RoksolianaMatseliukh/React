@@ -1,5 +1,5 @@
 
-export class ProductsService {
+class ProductsService {
 
     _url = 'https://fakestoreapi.com/products';
 
@@ -11,3 +11,5 @@ export class ProductsService {
         return (await fetch(`${this._url}/category/${category}`)).json();
     }
 }
+
+export const apiService = new ProductsService();

@@ -4,21 +4,19 @@ import {
     ITEM_IN_CART_TOGGLE, ITEM_IN_WISH_LIST_TOGGLE,
     LOAD_PRODUCTS_BY_CATEGORY
 } from "../action-types";
-import {ProductsService} from "../../services/ProductsService";
+import {apiService} from "../../services/ProductsService";
 
 export const loadProductsByCategory = payload => ({ type: LOAD_PRODUCTS_BY_CATEGORY, payload });
 
 export const fetchProductsByCategory = async (dispatch, category) => {
-    const api = new ProductsService();
-
     if (!category) {
 
-        const allProducts = await api.getAllProducts();
+        const allProducts = await apiService.getAllProducts();
         dispatch(loadProductsByCategory(allProducts));
         return;
     }
 
-    const products = await api.getProductsByCategory(category);
+    const products = await apiService.getProductsByCategory(category);
     dispatch(loadProductsByCategory(products));
 };
 
