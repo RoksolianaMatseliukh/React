@@ -14,7 +14,7 @@ export const wishListReducer = (state = initialState, action) => {
                 newWishList.push(action.payload);
             }
 
-            return { wishList: newWishList };
+            return { ...state, wishList: newWishList };
 
         default:
             return state;
