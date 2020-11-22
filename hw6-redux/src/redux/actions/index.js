@@ -1,10 +1,10 @@
+import {apiService} from "../../services/ProductsService";
 import {
     DECREASE_ITEM_QUANTITY,
     INCREASE_ITEM_QUANTITY,
     ITEM_IN_CART_TOGGLE, ITEM_IN_WISH_LIST_TOGGLE,
     LOAD_PRODUCTS_BY_CATEGORY
 } from "../action-types";
-import {apiService} from "../../services/ProductsService";
 
 export const loadProductsByCategory = payload => ({ type: LOAD_PRODUCTS_BY_CATEGORY, payload });
 
